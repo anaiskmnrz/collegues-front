@@ -1,0 +1,18 @@
+<div class='container'>
+<div class="form-group row">
+  <label for="texte" class="col-3 row-5 col-form-label">Recherche par nom </label>
+  <div class = "col-5 col-form-label">
+   <input class="form-control" type="text" id="texte">
+  </div>
+  <div class="col-4 col-form-label">
+    <button type="button" class="btn-primary form-control" (click)="clicBouton()">
+      Recherche
+    </button>
+  </div>
+  <ng-container *ngIf="boolBouton === true">
+    listeMatricule
+  </ng-container>
+
+</div>
+</div>
+
