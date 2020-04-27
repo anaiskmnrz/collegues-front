@@ -10,9 +10,10 @@
     </button>
   </div>
   <ng-container *ngIf="boolBouton === true">
-    listeMatricule
+    <li class ="list-group" *ngFor="let m of matricules">
+      <p class = "ml-5 mt-5"> {{m}}</p>
+    </li>
   </ng-container>
 
-</div>
 </div>
 
