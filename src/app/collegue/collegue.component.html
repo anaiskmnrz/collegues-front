@@ -1,11 +1,9 @@
 
+<div class="container">
 
-
-
-<div *ngIf=col class="container">
-  <div class="row">
+  <div *ngIf="!modeCrea && col" class="row">
       <div class = "col-12 col-md-5">
-        <img src="{{col.photoUrl}}" alt="photo collègue" class="img-fluid"/>
+        <img *ngIf="col.photoUrl" src="{{col.photoUrl}}" alt="photo collègue" class="img-fluid"/>
       </div>
       <div class="col-12 col-md-7">
         <h2>Profil du collègue : </h2>
@@ -27,7 +25,7 @@
         <br/>
 
 
-        <div *ngIf="bool == false; else elseBlock">
+        <div *ngIf="modeModif == false; else elseBlock">
 
           <label>Email : </label>
           {{col.email}}
@@ -50,15 +48,15 @@
           <form>
 
             <div class="form-group row">
-              <label for="mail" class="col-1 col-form-label">Email </label>
-              <div class = "offset-1 col-5">
+              <label for="mail" class="col-3 col-form-label">Email </label>
+              <div class = "col-9">
                <input class="form-control" type="email" id="mail">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="url" class="col-2 col-form-label">Photo URL </label>
-              <div class = "col-5">
+              <label for="url" class="col-3 col-form-label">Photo URL </label>
+              <div class = "col-9">
                 <input class = "form-control" type="text" id="url">
               </div>
             </div>
@@ -66,7 +64,7 @@
           </form>
 
            <div class="row">
-            <div class="offset-3 col-4">
+            <div class="offset-8 col-4">
               <button type="button" class="btn-success form-control" >
                 Valider
               </button>
@@ -76,3 +74,9 @@
 
   </div>
 </div>
+
+<app-collegue-formulaire *ngIf="modeCrea" (creer)="modeCrea = false"></app-collegue-formulaire>
+
+</div>
+
+

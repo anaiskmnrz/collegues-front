@@ -14,8 +14,8 @@ export class CollegueComponent implements OnInit {
 
   col: Collegue;
   messageErreur: string;
-  bool = false;
-  modif = false;
+  modeModif = false;
+  modeCrea = false;
 
   constructor(private dataService: DataService) {
   }
@@ -28,12 +28,14 @@ export class CollegueComponent implements OnInit {
 
   ajouterCollegue() {
     console.log('Création d\'un nouveau collègue');
-    this.modif = true;
+    this.modeCrea = true;
+    this.modeModif = false;
   }
 
   modifierCollegue() {
     console.log('Modification du collègue');
-    this.bool = true;
+    this.modeModif = true;
+    this.modeCrea = false;
   }
 
 }

@@ -5,7 +5,7 @@
     <div class="col-9">
       <input class="form-control" id="nom" name="nom" type="text" required [(ngModel)]="saisieCollegue.nom" #etatNom="ngModel">
     </div>
-    <div *ngIf="etatNom.pristine">
+    <div *ngIf="etatNom.dirty && etatNom.invalid">
       <ngb-alert> Le nom est obligatoire !</ngb-alert>
     </div>
   </div>
@@ -15,7 +15,7 @@
     <div class="col-9">
       <input class="form-control" id="prenom" name="prenom "type="text" required [(ngModel)]="saisieCollegue.prenoms" #etatPrenom="ngModel">
     </div>
-    <div *ngIf="etatPrenom.pristine">
+    <div *ngIf="etatPrenom.dirty && etatPrenom.invalid">
       <ngb-alert> Le prénom est obligatoire !</ngb-alert>
     </div>
   </div>
@@ -26,7 +26,7 @@
     <div class="col-9">
       <input class="form-control" id="email" name="email" type="mail" required [(ngModel)]="saisieCollegue.email" #etatEmail="ngModel">
     </div>
-    <div *ngIf="etatEmail.pristine">
+    <div *ngIf="etatEmail.dirty && etatEmail.invalid">
       <ngb-alert> L'email est obligatoire !</ngb-alert>
     </div>
   </div>
@@ -36,7 +36,7 @@
     <div class="col-9">
     <input class="form-control" id="date" name="date" type="date" required [(ngModel)]="saisieCollegue.dateDeNaissance" #etatDateDeNaissance="ngModel">
     </div>
-    <div *ngIf="etatNom.pristine">
+    <div *ngIf="etatDateDeNaissance.dirty && etatDateDeNaissance.invalid">
       <ngb-alert> La date de naissance est obligatoire !</ngb-alert>
     </div>
   </div>
@@ -47,7 +47,7 @@
       <input class="form-control" id="photo" name="photo" type="text" required minlength="7" [(ngModel)]="saisieCollegue.photoUrl" #etatPhotoUrl="ngModel">
     </div>
 
-  <div *ngIf="etatPhotoUrl.invalid && etatPhotoUrl.pristine">
+  <div *ngIf="etatPhotoUrl.invalid && etatPhotoUrl.dirty">
     <ngb-alert>L'URL n'est pas valide</ngb-alert>
   </div>
   </div>
@@ -57,5 +57,10 @@
       Créer
     </button>
   </div>
+
+
+<div *ngIf="messageErreur" class="alert alert-danger" role="alert">
+  {{  messageErreur }}
+</div>
 
 </form>

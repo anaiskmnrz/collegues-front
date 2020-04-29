@@ -19,7 +19,9 @@ export class RechercheCollegueParNomComponent implements OnInit {
    }
 
    rechercherParNom(nom: string) {
-     this.dataService.rechercherParNom(nom)
+    this.messageErreur = undefined;
+
+    this.dataService.rechercherParNom(nom)
      .subscribe(
       listeMatricules => {
         this.matricules = listeMatricules;
