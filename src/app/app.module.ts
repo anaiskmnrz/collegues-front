@@ -15,13 +15,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
 
 
-/*export const ROUTES: Routes = [
+export const ROUTES: Routes = [
   { path: 'menu', component: MenuComponent},
-  { path: 'accueil', component: AccueilComponent},
-  { path: 'apropos', component: AProposComponent },
+  { path: 'accueil', component: AProposComponent},
+  { path: 'apropos', component: AccueilComponent},
   { path: 'gallery', component: GalleryComponent},
   { path: '', pathMatch: 'full', redirectTo: 'menu'}
-];*/
+];
 
 @NgModule({
   declarations: [
@@ -31,14 +31,15 @@ import { AccueilComponent } from './accueil/accueil.component';
     CollegueFormulaireComponent,
     MenuComponent,
     GalleryComponent,
-    AProposComponent
+    AProposComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     HttpClientModule,
     FormsModule,
-    /*RouterModule.forRoot(ROUTES)*/
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

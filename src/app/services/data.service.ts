@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import {listeMatricule} from '../mock/matricule.mock';
 import Collegue from '../models/Collegue';
-import {collegueMock} from '../mock/collegues.mock';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import {environment} from '../../environments/environment';
