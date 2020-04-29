@@ -9,22 +9,26 @@ import { DataService } from '../services/data.service';
 })
 export class CollegueComponent implements OnInit {
 
-  // avant c'etait input avec rien dans constructor et ngOnInit
-  //@Input() col: Collegue;
+  /* avant c'etait input avec rien dans constructor et ngOnInit
+  @Input() col: Collegue;*/
 
   col: Collegue;
-
+  messageErreur: string;
   bool = false;
+  modif = false;
 
   constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void {
-    this.col = this.dataService.recupererCollegueCourant();
+    this.dataService.recupererCollegueCourant()
+    .subscribe(collegue => this.col = collegue,
+      err => this.messageErreur = 'erreur');
   }
 
   ajouterCollegue() {
     console.log('Création d\'un nouveau collègue');
+    this.modif = true;
   }
 
   modifierCollegue() {

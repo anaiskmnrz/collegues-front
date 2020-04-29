@@ -1,11 +1,8 @@
 
 
-	<div class = "jumbotron text-center" style="margin-bottom:100">
-		<h1>Répertoire </h1>
-	</div>
 
 
-<div class="container">
+<div *ngIf=col class="container">
   <div class="row">
       <div class = "col-12 col-md-5">
         <img src="{{col.photoUrl}}" alt="photo collègue" class="img-fluid"/>
@@ -38,7 +35,7 @@
 
           <div class="row">
             <div class="col-sm-8">
-              <button type="button" class="btn-link form-control" (click)="ajouterCollegue()">
+              <button type="button" class="btn btn-link form-control" (click)="ajouterCollegue()">
                 Créer un nouveau collègue
               </button>
             </div>

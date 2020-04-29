@@ -1,17 +1,25 @@
+
+
+<div *ngIf="messageErreur" class="alert alert-danger" role="alert">
+  {{  messageErreur }}
+</div>
+
 <div class='container'>
 <div class="form-group row">
   <label for="texte" class="col-3 row-5 col-form-label">Recherche par nom </label>
   <div class = "col-5 col-form-label">
-   <input class="form-control" type="text" id="texte">
+   <input class="form-control" type="text" id="texte" #saisie>
   </div>
   <div class="col-4 col-form-label">
-    <button type="button" class="btn-primary form-control" (click)="clicBouton()">
+    <button type="button" class="btn-primary form-control" (click)="rechercherParNom(saisie.value)">
       Recherche
     </button>
   </div>
-  <ng-container *ngIf="boolBouton === true">
+  <ng-container *ngIf="bool === true">
     <li class ="list-group" *ngFor="let m of matricules">
-      <p class = "ml-5 mt-5"> {{m}}</p>
+      <button type="button" class="btn-link form-control" (click)="selectMatricule(m)">
+        <p > {{m}}</p>
+      </button>
     </li>
   </ng-container>
 
