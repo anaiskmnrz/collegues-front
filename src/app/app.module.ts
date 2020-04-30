@@ -16,11 +16,10 @@ import { AccueilComponent } from './accueil/accueil.component';
 
 
 export const ROUTES: Routes = [
-  { path: 'menu', component: MenuComponent},
-  { path: 'accueil', component: AProposComponent},
-  { path: 'apropos', component: AccueilComponent},
+  { path: 'accueil', component: AccueilComponent},
+  { path: 'apropos', component: AProposComponent},
   { path: 'gallery', component: GalleryComponent},
-  { path: '', pathMatch: 'full', redirectTo: 'menu'}
+  { path: '', pathMatch: 'full', redirectTo: 'accueil'}
 ];
 
 @NgModule({
